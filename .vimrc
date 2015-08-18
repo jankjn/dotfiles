@@ -65,7 +65,7 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""
   map ,e :e ~/.vimrc<CR>
   " When vimrc is edited, reload it
-  autocmd! BufWritePost $MYVIMRC source $MYVIMRC
+  autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
 """"""""""""""""""""""""""""""""""""""""
 "
 "     status line
