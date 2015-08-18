@@ -1,0 +1,12 @@
+[user]
+	name = zach
+	email = z.ach@outlook.com
+[gui]
+	encoding = utf-8
+[core]
+	autocrlf = false
+	safecrlf = true
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[push]
+	default = simple
