@@ -1,3 +1,2 @@
 set go=
-colorscheme desert
-set guifont=Consolas:h11:cANSI
+set guifont=Consolas:h12:cANSI
