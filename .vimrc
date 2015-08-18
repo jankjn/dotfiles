@@ -19,6 +19,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-auto-save'
 Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -53,6 +54,25 @@ filetype plugin indent on    " required
   autocmd FileType html,css EmmetInstall
 """"""""""""""""""""""""""""""""""""""""
 "
+"     status line
+"
+""""""""""""""""""""""""""""""""""""""""
+  set laststatus=2
+  " enable terminal color
+  set t_Co=256
+  " enable tabline
+  let g:airline#extensions#tabline#enabled = 1
+  " use solarized
+  let g:airline_theme='solarized'
+""""""""""""""""""""""""""""""""""""""""
+"
+"     solarized
+"
+""""""""""""""""""""""""""""""""""""""""
+  set background=dark
+  colorscheme solarized
+""""""""""""""""""""""""""""""""""""""""
+"
 "     EOL whitespace
 "
 """"""""""""""""""""""""""""""""""""""""
@@ -66,16 +86,6 @@ filetype plugin indent on    " required
   map ,e :e ~/.vimrc<CR>
   " When vimrc is edited, reload it
   autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
-""""""""""""""""""""""""""""""""""""""""
-"
-"     status line
-"
-""""""""""""""""""""""""""""""""""""""""
-  set laststatus=2
-  " enable terminal color
-  set t_Co=256
-  " enable tabline
-  let g:airline#extensions#tabline#enabled = 1
 """"""""""""""""""""""""""""""""""""""""
 
 set fileformat=unix
