@@ -72,35 +72,6 @@ filetype plugin indent on    " required
 "
 """"""""""""""""""""""""""""""""""""""""
   set laststatus=2
-""""""""""""""""""""""""""""""""""""""""
-
-
-syntax on
-set ts=2 sw=2 et
-set backspace=indent,eol,start
-set wildmenu
-set incsearch
-""""""""""""""""""""""""""""""""""""""""
-"
-"     EOL whitespace
-"
-""""""""""""""""""""""""""""""""""""""""
-  set list
-  set listchars=trail:+
-""""""""""""""""""""""""""""""""""""""""
-"
-"     vimrc editing
-"
-""""""""""""""""""""""""""""""""""""""""
-  map ,e :e ~/.vimrc<CR>
-  " When vimrc is edited, reload it
-  autocmd! BufWritePost $MYVIMRC source $MYVIMRC
-""""""""""""""""""""""""""""""""""""""""
-"
-"     status line
-"
-""""""""""""""""""""""""""""""""""""""""
-  set laststatus=2
   " enable terminal color
   set t_Co=256
   " enable tabline
