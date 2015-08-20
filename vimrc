@@ -69,8 +69,10 @@ filetype plugin indent on    " required
 "     solarized
 "
 """"""""""""""""""""""""""""""""""""""""
-  set background=dark
+  " apply sloarized to term emulator
+  let g:solarized_termcolors=256
   colorscheme solarized
+  set background=dark
 """"""""""""""""""""""""""""""""""""""""
 "
 "     EOL whitespace
