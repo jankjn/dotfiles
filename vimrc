@@ -69,8 +69,8 @@ filetype plugin indent on    " required
 "     solarized
 "
 """"""""""""""""""""""""""""""""""""""""
-  set background=dark
   colorscheme solarized
+  set background=dark
 """"""""""""""""""""""""""""""""""""""""
 "
 "     EOL whitespace
