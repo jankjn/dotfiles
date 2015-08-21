@@ -77,7 +77,7 @@ filetype plugin indent on    " required
 "
 """"""""""""""""""""""""""""""""""""""""
   set list
-  set listchars=trail:+
+  set listchars=trail:+,tab:>-
 """"""""""""""""""""""""""""""""""""""""
 "
 "     vimrc editing
