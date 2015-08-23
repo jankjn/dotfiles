@@ -18,6 +18,8 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-auto-save'
+Plugin 'rails.vim'
+
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 
