@@ -89,6 +89,13 @@ filetype plugin indent on    " required
   " When vimrc is edited, reload it
   autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
 """"""""""""""""""""""""""""""""""""""""
+"
+"     buffer switching
+"
+""""""""""""""""""""""""""""""""""""""""
+  map <tab> :bn<CR>
+  map <s-tab> :bp<CR>
+""""""""""""""""""""""""""""""""""""""""
 
 set fileformat=unix
 set fileformats=unix,dos
