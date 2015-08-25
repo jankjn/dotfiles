@@ -1,3 +1,6 @@
 # dotfiles
 my dotfiles config
-use secpol.msc to config permission of mklink
+
+linux: ln -s dotfiles/vimrc ~/.vimrc
+windows: mklink .vimrc dotfiles/vimrc
+>use secpol.msc to config permission of mklink
