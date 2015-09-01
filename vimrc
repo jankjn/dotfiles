@@ -96,6 +96,12 @@ filetype plugin indent on    " required
   map <tab> :bn<CR>
   map <s-tab> :bp<CR>
 """"""""""""""""""""""""""""""""""""""""
+"
+"     treat *.md as markdown
+"
+""""""""""""""""""""""""""""""""""""""""
+  autocmd BufNewFile,BufRead *.md set filetype=markdown
+""""""""""""""""""""""""""""""""""""""""
 
 set fileformat=unix
 set fileformats=unix,dos
