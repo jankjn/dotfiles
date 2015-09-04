@@ -1,7 +1,7 @@
 BoldAsFont=yes
 Transparency=off
 CursorType=underscore
-Font=Consolas
+Font=DejaVu Sans Mono
 FontHeight=11
 BoldAsColour=no
 Locale=en_US
