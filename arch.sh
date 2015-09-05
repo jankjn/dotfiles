@@ -37,5 +37,5 @@ if [[ ! -d ~/.zprezto ]]; then
     ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
   done'
 
-  chsh -s /bin/zsh
+  sudo chsh -s /bin/zsh $USER
 fi
