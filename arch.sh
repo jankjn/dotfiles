@@ -8,9 +8,9 @@ sudo ln -sf ./vim /usr/bin/vi
 #clone dotfiles
 if [[ ! -d ~/.dotfiles ]]; then
   git clone git://github.com/ZhengzhongZhang/dotfiles ~/.dotfiles
-  ln -s .dotfiles/vimrc ~/.vimrc
-  ln -s .dotfiles/gitconfig ~/.gitconfig
 fi
+ln -s .dotfiles/vimrc ~/.vimrc
+ln -s .dotfiles/gitconfig ~/.gitconfig
 
 #install Vundle and Plugins
 if [[ ! -d ~/.vim/bundle/Vundle.vim/ ]]; then
