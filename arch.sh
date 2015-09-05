@@ -39,4 +39,3 @@ if [[ ! -d ~/.zprezto ]]; then
 
   sudo chsh -s /bin/zsh $USER
 fi
-exec /bin/zsh --login
