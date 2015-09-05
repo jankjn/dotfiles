@@ -2,7 +2,7 @@
 sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
 yes | sudo pacman -Syu
-sudo pacman -S --needed git vim zsh
+yes | sudo pacman -S --needed git vim zsh
 sudo ln -sf ./vim /usr/bin/vi
 
 #clone dotfiles
