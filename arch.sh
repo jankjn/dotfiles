@@ -26,6 +26,7 @@ if [[ ! -d ~/.zprezto ]]; then
     modules/history-substring-search/external \
     modules/syntax-highlighting/external \
     modules/completion/external
+  cd ~
   rm ~/.zprezto/modules/prompt/functions/{async,prompt_agnoster_setup,prompt_powerline_setup,prompt_pure_setup}
 
   zsh -c '
