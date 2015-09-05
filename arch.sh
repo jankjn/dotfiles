@@ -15,7 +15,9 @@ fi
 #install Vundle and Plugins
 if [[ ! -d ~/.vim/bundle/Vundle.vim/ ]]; then
   git clone git://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  sed -i 's/colorscheme/"colorscheme/' ~/.vimrc
   vim +PluginInstall +qall
+  sed -i 's/"colorscheme/colorscheme/' ~/.vimrc
 fi
 
 #install prezto
