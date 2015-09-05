@@ -1,7 +1,7 @@
 #enable pacman color
 sudo sed -i 's/#Color/Color/' /etc/pacman.conf
 
-sudo pacman -Syu
+yes | sudo pacman -Syu
 sudo pacman -S --needed git vim zsh
 sudo ln -sf ./vim /usr/bin/vi
 
