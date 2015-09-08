@@ -14,4 +14,4 @@ sed -i '6 i Server = http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch' /etc/pa
 
 pacstrap -i /mnt base
 genfstab -p /mnt >> /mnt/etc/fstab
-arch-chroot /mnt
+arch-chroot /mnt ls
