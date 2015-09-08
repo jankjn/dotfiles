@@ -17,18 +17,18 @@ genfstab -p /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
 arch-chroot /mnt locale-gen
-arch-chroot /mnt echo LANG=en_US.UTF-8 > /etc/locale.conf
+echo LANG=en_US.UTF-8 > /mnt/etc/locale.conf
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 arch-chroot /mnt hwclock -wu
 arch-chroot /mnt echo archlinux > /etc/hostname
 arch-chroot /mnt passwd
 arch-chroot /mnt bootctl --path=/boot install
-arch-chroot /mnt cat > /boot/loader/arch.conf <<-ARCH
+echo > /mnt/boot/loader/entries/arch.conf <<-ARCH
 title	Arch Linux
 linux	/vmlinuz-linux
 initrd	/initramfs-linux.img
 options	root=/dev/sda1 rw
 ARCH
-arch-chroot /mnt echo default	arch> /boot/loader/loader.conf
+echo default	arch> /mnt/boot/loader/loader.conf
 arch-chroot /mnt systemctl enable dhcpcd@enp0s3.service
 
