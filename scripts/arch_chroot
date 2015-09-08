@@ -1,2 +1,0 @@
-echo archlinux > /etc/hostname
-ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
