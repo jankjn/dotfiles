@@ -1,4 +1,5 @@
-parted /dev/sda -s 'mklabel gpt' parted /dev/sda -s 'mkpart esp 1m 513'
+parted /dev/sda -s 'mklabel gpt'
+parted /dev/sda -s 'mkpart esp 1m 513'
 parted /dev/sda -s 'set 1 boot on'
 parted /dev/sda -s 'mkpart primary 513m 100%'
 mkfs.vfat -F 32 /dev/sda1
@@ -26,7 +27,7 @@ cat > /boot/loader/arch.conf <<-ARCH
 title	Arch Linux
 linux	/vmlinuz-linux
 initrd	/initramfs-linux.img
-options	root=/dev/sda1 rw 
+options	root=/dev/sda1 rw
 ARCH;\
 echo default	arch> /boot/loader/loader.conf;\
 systemctl enable dhcpcd@enp0s3.service
