@@ -10,25 +10,25 @@ mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-sed -i '6 i Server = http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+sed -i '6 i Server = http://mirrors.cqu.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
 
 echo -e "\n" | pacstrap -i /mnt base
 genfstab -p /mnt >> /mnt/etc/fstab
-arch-chroot /mnt \
-sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen;\
-locale-gen;\
-echo LANG=en_US.UTF-8 > /etc/locale.conf;\
-ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime;\
-hwclock -wu;\
-echo archlinux > /etc/hostname;\
-passwd;\
-bootctl --path=/boot install;\
-cat > /boot/loader/arch.conf <<-ARCH
+
+arch-chroot /mnt sed -i 's/#en_US.UTF-8/en_US.UTF-8/' /etc/locale.gen
+arch-chroot /mnt locale-gen
+arch-chroot /mnt echo LANG=en_US.UTF-8 > /etc/locale.conf
+arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+arch-chroot /mnt hwclock -wu
+arch-chroot /mnt echo archlinux > /etc/hostname
+arch-chroot /mnt passwd
+arch-chroot /mnt bootctl --path=/boot install
+arch-chroot /mnt cat > /boot/loader/arch.conf <<-ARCH
 title	Arch Linux
 linux	/vmlinuz-linux
 initrd	/initramfs-linux.img
 options	root=/dev/sda1 rw
-ARCH;\
-echo default	arch> /boot/loader/loader.conf;\
-systemctl enable dhcpcd@enp0s3.service
+ARCH
+arch-chroot /mnt echo default	arch> /boot/loader/loader.conf
+arch-chroot /mnt systemctl enable dhcpcd@enp0s3.service
 
