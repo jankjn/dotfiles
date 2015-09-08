@@ -1,0 +1,17 @@
+parted /dev/sda -s 'mklabel gpt'
+parted /dev/sda -s 'mkpart esp 1m 513'
+parted /dev/sda -s 'set 1 boot on'
+parted /dev/sda -s 'mkpart primary 513m 100%'
+mkfs.vfat -F 32 /dev/sda1
+mkfs.ext4 /dev/sda2
+
+mount /dev/sda2 /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
+
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+sed -i '6 i Server = http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
+
+pacstrap -i /mnt base
+genfstab -p /mnt >> /mnt/etc/fstab
+arch-chroot /mnt
