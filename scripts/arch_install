@@ -20,7 +20,7 @@ arch-chroot /mnt locale-gen
 echo LANG=en_US.UTF-8 > /mnt/etc/locale.conf
 arch-chroot /mnt ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 arch-chroot /mnt hwclock -wu
-echo archlinux > /etc/hostname
+echo archlinux > /mnt/etc/hostname
 arch-chroot /mnt passwd
 arch-chroot /mnt bootctl --path=/boot install
 cat > /mnt/boot/loader/entries/arch.conf <<-ARCH
