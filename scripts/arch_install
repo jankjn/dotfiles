@@ -1,5 +1,5 @@
 parted /dev/sda -s 'mklabel gpt'
-parted /dev/sda -s 'mkpart esp 1m 513'
+parted /dev/sda -s 'mkpart esp 1m 513m'
 parted /dev/sda -s 'set 1 boot on'
 parted /dev/sda -s 'mkpart primary 513m 100%'
 mkfs.vfat -F 32 /dev/sda1
