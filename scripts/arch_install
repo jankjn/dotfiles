@@ -9,9 +9,6 @@ mount /dev/sda2 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-sed -i '6 i Server = http://mirrors.zju.edu.cn/archlinux/$repo/os/$arch' /etc/pacman.d/mirrorlist
-
 echo -e "\n" | pacstrap -i /mnt base
 genfstab -p /mnt >> /mnt/etc/fstab
 
