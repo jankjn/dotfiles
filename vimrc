@@ -44,6 +44,8 @@ filetype plugin indent on    " required
 "     vim-auto-save
 """"""""""""""""""""""""""""""""""""""""
   let g:auto_save = 1
+  let g:auto_save_in_insert_mode = 0
+  " let g:auto_save_no_updatetime = 1
 """"""""""""""""""""""""""""""""""""""""
 "     emmet-vim
 """"""""""""""""""""""""""""""""""""""""
