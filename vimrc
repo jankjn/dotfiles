@@ -11,17 +11,18 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-
+" common
 Plugin 'ctrlp.vim'
 Plugin 'surround.vim'
 Plugin 'msanders/snipmate.vim'
-Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-auto-save'
-Plugin 'rails.vim'
-
+" eye candy
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
+" development specific
+Plugin 'mattn/emmet-vim'
+Plugin 'rails.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
