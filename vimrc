@@ -114,3 +114,5 @@ set wildmenu
 set incsearch
 set hidden
 set relativenumber
+set cursorline
+set nowrap
