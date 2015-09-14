@@ -12,6 +12,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " common
+Plugin 'tpope/vim-sensible'
 Plugin 'ctrlp.vim'
 Plugin 'surround.vim'
 Plugin 'msanders/snipmate.vim'
@@ -21,9 +22,10 @@ Plugin 'vim-auto-save'
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 " development specific
-" Plugin 'mattn/emmet-vim'
-" Plugin 'rails.vim'
-" Plugin 'maksimr/vim-jsbeautify'
+Plugin 'mattn/emmet-vim'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'maksimr/vim-jsbeautify'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -50,13 +52,10 @@ filetype plugin indent on    " required
 "     emmet-vim
 """"""""""""""""""""""""""""""""""""""""
   let g:user_emmet_install_global = 0
-  autocmd FileType html,css,eruby EmmetInstall
+  autocmd FileType html,css,eruby,php EmmetInstall
 """"""""""""""""""""""""""""""""""""""""
 "     vim-airline
 """"""""""""""""""""""""""""""""""""""""
-  set laststatus=2
-  " enable terminal color
-  set t_Co=256
   " enable tabline
   let g:airline#extensions#tabline#enabled = 1
   " use solarized
@@ -69,30 +68,30 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""
 "     vim-jsbeautify
 """"""""""""""""""""""""""""""""""""""""
-  " " for js
-  " autocmd FileType javascript noremap <buffer> <c-h> :call JsBeautify()<cr>
-  " " for html
-  " autocmd FileType html noremap <buffer> <c-h> :call HtmlBeautify()<cr>
-  " " for css or scss
-  " autocmd FileType css noremap <buffer> <c-h> :call CSSBeautify()<cr>
+  " require npm install -g js-beautify
+  " for js
+  autocmd FileType javascript noremap <buffer> <c-h> :call JsBeautify()<cr>
+  " for html
+  autocmd FileType html noremap <buffer> <c-h> :call HtmlBeautify()<cr>
+  " for css or scss
+  autocmd FileType css noremap <buffer> <c-h> :call CSSBeautify()<cr>
 
 
 """"""""""""""""""""""""""""""""""""""""
 "     show whitespace
 """"""""""""""""""""""""""""""""""""""""
   set list
-  set listchars=trail:+,tab:>-
 """"""""""""""""""""""""""""""""""""""""
 "     vimrc editing
 """"""""""""""""""""""""""""""""""""""""
-  map ,e :e ~/.vimrc<CR>
+  nnoremap ,e :e ~/.vimrc<CR>
   " When vimrc is edited, reload it
   autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
 """"""""""""""""""""""""""""""""""""""""
 "     buffer switching
 """"""""""""""""""""""""""""""""""""""""
-  map <tab> :bn<CR>
-  map <s-tab> :bp<CR>
+  nnoremap <tab> :bn<CR>
+  nnoremap <s-tab> :bp<CR>
 """"""""""""""""""""""""""""""""""""""""
 "     treat *.md as markdown
 """"""""""""""""""""""""""""""""""""""""
@@ -108,12 +107,11 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""
 
 syntax on
-set ts=2 sw=2 et
-set backspace=indent,eol,start
-set wildmenu
-set incsearch
+set expandtab
+set ts=4 sw=4 sts=4
+autocmd FileType ruby setlocal ts=2 sw=2 sts=2
+autocmd FileType vim setlocal ts=2 sw=2 sts=2
 set hidden
-set relativenumber
-set number
+set relativenumber number
 set cursorline
 set nowrap
