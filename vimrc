@@ -18,6 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'msanders/snipmate.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-auto-save'
+Plugin 'tpope/vim-fugitive'
 " eye candy
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
