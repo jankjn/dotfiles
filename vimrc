@@ -13,8 +13,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " common
 Plugin 'tpope/vim-sensible'
-Plugin 'ctrlp.vim'
-Plugin 'surround.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
 Plugin 'msanders/snipmate.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-auto-save'
@@ -25,7 +25,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
-Plugin 'maksimr/vim-jsbeautify'
+Plugin 'maksimr/vim-jsbeautify' " require npm install -g js-beautify
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,7 +35,7 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""
 "     ctrlp.vim
 """"""""""""""""""""""""""""""""""""""""
-  let g:ctrlp_by_filename = 1
+  " let g:ctrlp_by_filename = 1
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 
   let g:ctrlp_custom_ignore = {
@@ -60,6 +60,7 @@ filetype plugin indent on    " required
   let g:airline#extensions#tabline#enabled = 1
   " use solarized
   let g:airline_theme='solarized'
+  let g:airline_powerline_fonts=1
 """"""""""""""""""""""""""""""""""""""""
 "     solarized
 """"""""""""""""""""""""""""""""""""""""
@@ -68,7 +69,6 @@ filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""
 "     vim-jsbeautify
 """"""""""""""""""""""""""""""""""""""""
-  " require npm install -g js-beautify
   " for js
   autocmd FileType javascript noremap <buffer> <c-h> :call JsBeautify()<cr>
   " for html
