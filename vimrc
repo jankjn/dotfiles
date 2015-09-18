@@ -85,25 +85,6 @@ autocmd FileType css noremap <buffer> <c-h> :call CSSBeautify()<cr>
 "}}}
 
 
-"-------general {{{
-"---------------------------------------
-syntax on
-set hidden                      " switch with buffer unsaved
-set relativenumber number       " nice line number
-set cursorline                  " highlight current line
-set foldmethod=marker           " auto fold at {{{,}}}
-set nowrap                      " no wrapping
-set list                        " show unvisible chars
-autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
-"}}}
-
-"-------tab config {{{
-"---------------------------------------
-set expandtab
-set ts=4 sw=4 sts=4
-autocmd FileType ruby setlocal ts=2 sw=2 sts=2
-"}}}
-
 "-------buffer switching {{{
 "---------------------------------------
 nnoremap <tab> :bn<CR>
@@ -124,4 +105,22 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 nnoremap ,e :e $MYVIMRC<CR>
 " When vimrc is edited, reload it
 autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
+"}}}
+
+"-------tab config {{{
+"---------------------------------------
+set expandtab
+set ts=4 sw=4 sts=4
+autocmd FileType ruby setlocal ts=2 sw=2 sts=2
+"}}}
+
+"-------general {{{
+"---------------------------------------
+syntax on
+set hidden                      " switch with buffer unsaved
+set relativenumber number       " nice line number
+set cursorline                  " highlight current line
+set foldmethod=marker           " auto fold at {{{,}}}
+set list                        " show unvisible chars
+autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
 "}}}
