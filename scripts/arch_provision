@@ -22,14 +22,15 @@ fi
 
 #install prezto
 if [[ ! -d ~/.zprezto ]]; then
-  git clone git://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
-  cd ~/.zprezto
-  git submodule update --init --recursive \
-    modules/history-substring-search/external \
-    modules/syntax-highlighting/external \
-    modules/completion/external
-  cd ~
-  rm ~/.zprezto/modules/prompt/functions/{async,prompt_agnoster_setup,prompt_powerline_setup,prompt_pure_setup}
+  git clone --recursive git://github.com/ZhengzhongZhang/prezto.git "$HOME/.zprezto"
+  # git clone git://github.com/sorin-ionescu/prezto.git "$HOME/.zprezto"
+  # cd ~/.zprezto
+  # git submodule update --init --recursive \
+  #   modules/history-substring-search/external \
+  #   modules/syntax-highlighting/external \
+  #   modules/completion/external
+  # cd ~
+  # rm ~/.zprezto/modules/prompt/functions/{async,prompt_agnoster_setup,prompt_powerline_setup,prompt_pure_setup}
 
   zsh -c '
   setopt EXTENDED_GLOB
