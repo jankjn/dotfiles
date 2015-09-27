@@ -22,6 +22,7 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-auto-save'
 Plugin 'tpope/vim-fugitive'
+Plugin 'rking/ag.vim'
 " eye candy
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
@@ -39,7 +40,7 @@ filetype plugin indent on       " required
 "-------ctrlp.vim {{{
 "---------------------------------------
 " let g:ctrlp_by_filename = 1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 
 let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git)$',
