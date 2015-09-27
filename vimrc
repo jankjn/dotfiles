@@ -22,6 +22,7 @@ Plugin 'msanders/snipmate.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-auto-save'
 Plugin 'tpope/vim-fugitive'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rking/ag.vim'
 " eye candy
 Plugin 'bling/vim-airline'
