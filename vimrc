@@ -27,6 +27,7 @@ Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 " development specific
 Plugin 'mattn/emmet-vim'
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 Plugin 'maksimr/vim-jsbeautify' " require npm install -g js-beautify
