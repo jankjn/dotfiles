@@ -27,5 +27,5 @@ initrd	/initramfs-linux.img
 options	root=/dev/sda2 rw
 ARCH
 echo default	arch> /mnt/boot/loader/loader.conf
-arch-chroot /mnt systemctl enable dhcpcd@enp0s3.service
+arch-chroot /mnt systemctl enable dhcpcd.service
 
