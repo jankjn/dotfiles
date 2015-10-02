@@ -114,7 +114,7 @@ autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
 "---------------------------------------
 set expandtab
 set ts=4 sw=4 sts=4
-autocmd FileType ruby setlocal ts=2 sw=2 sts=2
+autocmd FileType ruby,yaml setlocal ts=2 sw=2 sts=2
 "}}}
 
 "-------general {{{
