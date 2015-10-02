@@ -11,7 +11,7 @@ if [[ ! -d ~/.dotfiles ]]; then
 fi
 ln -sf .dotfiles/vimrc ~/.vimrc
 ln -sf .dotfiles/gitconfig ~/.gitconfig
-curl https://raw.githubusercontent.com/tony/tmux-config/master/.tmux.conf > .tmux.conf
+curl https://raw.githubusercontent.com/tony/tmux-config/master/.tmux.conf > ~/.tmux.conf
 
 #install Vundle and Plugins
 if [[ ! -d ~/.vim/bundle/Vundle.vim/ ]]; then
