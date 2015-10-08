@@ -24,6 +24,7 @@ Plugin 'vim-auto-save'
 Plugin 'tpope/vim-fugitive'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rking/ag.vim'
+Plugin 'paredit.vim'
 " eye candy
 Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
@@ -86,7 +87,6 @@ autocmd FileType html noremap <buffer> <c-h> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <c-h> :call CSSBeautify()<cr>
 "}}}
-
 
 "-------buffer switching {{{
 "---------------------------------------
