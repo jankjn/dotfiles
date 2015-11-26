@@ -1,3 +1,19 @@
+BoldAsFont=yes
+Transparency=off
+CursorType=underscore
+Font=Source Code Pro
+FontHeight=11
+BoldAsColour=no
+Locale=en_US
+Charset=UTF-8
+Term=xterm-256color
+Columns=100
+Rows=30
+ClicksTargetApp=yes
+Scrollbar=none
+AllowBlinking=yes
+RightClickAction=paste
+
 ForegroundColour=235,219,178
 BackgroundColour=40,40,40
 CursorColour=235,219,178
