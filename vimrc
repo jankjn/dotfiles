@@ -45,7 +45,7 @@ filetype plugin indent on       " required
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/](node_modules|target|dist)|(\.(swp|ico|git|svn))$',
+            \ 'dir':  '\v[\/](node_modules|vendor|target|dist)|(\.(swp|ico|git|svn))$',
             \ 'file': '\v\.(log|jpg|png|jpeg)$',
             \ }
 "}}}
