@@ -1,5 +1,9 @@
 """"""""""""""""""""""""""""""""""""""""
+" *nix:
+" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
+" neovim:
+" curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
 """"""""""""""""""""""""""""""""""""""""
 
@@ -14,19 +18,23 @@ Plug 'msanders/snipmate.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-auto-save'
 Plug 'tpope/vim-fugitive'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'rking/ag.vim'   " require the_silver_searcher
-Plug 'paredit.vim'
-Plug 'scrooloose/nerdtree'
+Plug 'Raimondi/delimitMate'
+Plug 'elzr/vim-json'
+" Plug 'scrooloose/nerdtree'
+" Plug 'terryma/vim-multiple-cursors'
+
 " eye candy
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
+
 " development specific
 Plug 'mattn/emmet-vim'
-Plug 'kchmck/vim-coffee-script'
+Plug 'pangloss/vim-javascript'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-Plug 'maksimr/vim-jsbeautify' " require npm install -g js-beautify
+" Plug 'kchmck/vim-coffee-script'
+" Plug 'maksimr/vim-jsbeautify' " require npm install -g js-beautify
 call plug#end()
 "}}}
 
@@ -63,6 +71,18 @@ let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
 "}}}
 
+"-------vim-javascript {{{
+let g:javascript_conceal_function   = "λ"
+let g:javascript_conceal_null       = "ø"
+let g:javascript_conceal_this       = "@"
+let g:javascript_conceal_return     = "⇐"
+let g:javascript_conceal_undefined  = "¿"
+" let g:javascript_conceal_NaN        = "ℕ"
+let g:javascript_conceal_prototype  = "#"
+let g:javascript_conceal_static     = "•"
+let g:javascript_conceal_super      = "Ω"
+"}}}
+
 "-------colorscheme {{{
 "---------------------------------------
 colorscheme gruvbox
@@ -95,7 +115,7 @@ autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
 "---------------------------------------
 set expandtab
 set ts=4 sw=4 sts=4
-autocmd FileType ruby,yaml setlocal ts=2 sw=2 sts=2
+autocmd FileType ruby,yaml,html setlocal ts=2 sw=2 sts=2
 "}}}
 
 "-------general {{{
