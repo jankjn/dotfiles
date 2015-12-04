@@ -20,19 +20,19 @@ Plug 'vim-auto-save'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'   " require the_silver_searcher
 Plug 'Raimondi/delimitMate'
-Plug 'elzr/vim-json'
-" Plug 'scrooloose/nerdtree'
-" Plug 'terryma/vim-multiple-cursors'
-
 " eye candy
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
-
 " development specific
+Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
+" not using currently
+" Plug 'scrooloose/nerdtree'
+" Plug 'terryma/vim-multiple-cursors'
 " Plug 'kchmck/vim-coffee-script'
 " Plug 'maksimr/vim-jsbeautify' " require npm install -g js-beautify
 call plug#end()
