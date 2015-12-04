@@ -81,6 +81,7 @@ let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_prototype  = "#"
 let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
+set conceallevel=1
 "}}}
 
 "-------colorscheme {{{
