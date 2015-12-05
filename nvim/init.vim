@@ -20,6 +20,12 @@ Plug 'vim-auto-save'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'   " require the_silver_searcher
 Plug 'Raimondi/delimitMate'
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim'
+    let g:deoplete#enable_at_startup = 1
+    Plug 'benekastah/neomake'
+    autocmd! BufWritePost * Neomake
+endif
 " eye candy
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
