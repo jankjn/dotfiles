@@ -72,7 +72,6 @@ autocmd FileType html,css,eruby,php EmmetInstall
 "---------------------------------------
 " enable tabline
 let g:airline#extensions#tabline#enabled = 1
-" use solarized
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
 "}}}
@@ -131,8 +130,9 @@ syntax on
 set hidden                      " switch with buffer unsaved
 set relativenumber number       " nice line number
 set cursorline                  " highlight current line
-set foldmethod=marker           " auto fold at {{{,}}}
 set list                        " show unvisible chars
+set foldmethod=syntax
+autocmd FileType vim setlocal foldmethod=marker         " auto fold vim config at {{{,}}}
 autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
 
 set mouse=
