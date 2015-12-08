@@ -131,6 +131,7 @@ set hidden                      " switch with buffer unsaved
 set relativenumber number       " nice line number
 set cursorline                  " highlight current line
 set list                        " show unvisible chars
+set foldlevelstart=20           " disable fold on start
 set foldmethod=syntax
 autocmd FileType vim setlocal foldmethod=marker         " auto fold vim config at {{{,}}}
 autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
