@@ -17,6 +17,8 @@ Plug 'tpope/vim-surround'
 Plug 'msanders/snipmate.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-auto-save'
+Plug 'pbrisbin/vim-mkdir'
+Plug 'danro/rename.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'   " require the_silver_searcher
 Plug 'Raimondi/delimitMate'
