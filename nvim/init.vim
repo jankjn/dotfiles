@@ -22,12 +22,6 @@ Plug 'danro/rename.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'   " require the_silver_searcher
 Plug 'Raimondi/delimitMate'
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim'
-    let g:deoplete#enable_at_startup = 1
-    Plug 'benekastah/neomake'
-    autocmd! BufWritePost * Neomake
-endif
 " eye candy
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
@@ -38,7 +32,17 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
+Plug 'posva/vim-vue'
+Plug 'kchmck/vim-coffee-script'
+Plug 'digitaltoad/vim-jade'
+Plug 'wavded/vim-stylus'
 " not using currently
+" if has('nvim')
+"     Plug 'Shougo/deoplete.nvim'
+"     let g:deoplete#enable_at_startup = 1
+"     Plug 'benekastah/neomake'
+"     autocmd! BufWritePost * Neomake
+" endif
 " Plug 'scrooloose/nerdtree'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'kchmck/vim-coffee-script'
