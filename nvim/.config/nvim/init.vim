@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
-Plug 'msanders/snipmate.vim'
+Plug 'drmingdrmer/xptemplate'
 Plug 'tomtom/tcomment_vim'
 Plug 'vim-auto-save'
 Plug 'pbrisbin/vim-mkdir'
@@ -59,6 +59,11 @@ let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/](node_modules|target|dist|build|vendor)|(\.(swp|ico|git|svn))$',
             \ 'file': '\v\.(log|jpg|png|jpeg)$',
             \ }
+"}}}
+
+"-------xptemplate {{{
+"---------------------------------------
+let g:xptemplate_vars="author=zach&email=z.ach@outlook.com"
 "}}}
 
 "-------vim-auto-save {{{
