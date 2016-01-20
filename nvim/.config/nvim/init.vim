@@ -16,7 +16,6 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'drmingdrmer/xptemplate'
 Plug 'tomtom/tcomment_vim'
-Plug 'vim-auto-save'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-fugitive'
@@ -43,6 +42,7 @@ Plug 'wavded/vim-stylus'
 "     Plug 'benekastah/neomake'
 "     autocmd! BufWritePost * Neomake
 " endif
+" Plug 'vim-auto-save'
 " Plug 'scrooloose/nerdtree'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'kchmck/vim-coffee-script'
@@ -68,8 +68,8 @@ let g:xptemplate_vars="author=zach&email=z.ach@outlook.com"
 
 "-------vim-auto-save {{{
 "---------------------------------------
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
+" let g:auto_save = 1
+" let g:auto_save_in_insert_mode = 0
 " let g:auto_save_no_updatetime = 1
 "}}}
 
