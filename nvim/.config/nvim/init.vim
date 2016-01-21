@@ -32,9 +32,6 @@ Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
 Plug 'posva/vim-vue'
-Plug 'kchmck/vim-coffee-script'
-Plug 'digitaltoad/vim-jade'
-Plug 'wavded/vim-stylus'
 " not using currently
 " if has('nvim')
 "     Plug 'Shougo/deoplete.nvim'
