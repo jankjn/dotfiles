@@ -85,7 +85,7 @@ let g:airline_powerline_fonts=1
 "}}}
 
 "-------vim-javascript {{{
-let g:javascript_conceal_function   = "λ"
+let g:javascript_conceal_function   = "ƒ"
 let g:javascript_conceal_null       = "ø"
 let g:javascript_conceal_this       = "@"
 let g:javascript_conceal_return     = "⇐"
