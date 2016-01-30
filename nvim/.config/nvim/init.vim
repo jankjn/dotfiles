@@ -137,7 +137,7 @@ autocmd FileType c setlocal ts=4 sw=4 sts=4
 syntax on
 set hidden                      " switch with buffer unsaved
 set relativenumber number       " nice line number
-set cursorline                  " highlight current line
+" set cursorline                  " highlight current line
 set list                        " show unvisible chars
 set listchars+=eol:¬            " add newline char
 set foldlevelstart=20           " disable fold on start
