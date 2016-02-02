@@ -109,6 +109,11 @@ nnoremap <tab> :bn<CR>
 nnoremap <s-tab> :bp<CR>
 "}}}
 
+"-------sudo save {{{
+"---------------------------------------
+cnoremap w!! w !sudo tee > /dev/null %
+"}}}
+
 "-------encoding && line ending {{{
 "---------------------------------------
 set fileformat=unix
@@ -135,6 +140,7 @@ autocmd FileType c setlocal ts=4 sw=4 sts=4
 "-------general {{{
 "---------------------------------------
 syntax on
+set nohlsearch
 set hidden                      " switch with buffer unsaved
 set relativenumber number       " nice line number
 " set cursorline                  " highlight current line
