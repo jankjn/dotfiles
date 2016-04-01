@@ -31,7 +31,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-Plug 'posva/vim-vue'
 " not using currently
 " if has('nvim')
 "     Plug 'Shougo/deoplete.nvim'
@@ -61,6 +60,10 @@ let g:ctrlp_custom_ignore = {
 "-------xptemplate {{{
 "---------------------------------------
 let g:xptemplate_vars="author=zach&email=z.ach@outlook.com"
+"}}}
+
+"-------delimitMate {{{
+let delimitMate_expand_cr = 1
 "}}}
 
 "-------vim-auto-save {{{
@@ -150,6 +153,7 @@ set foldlevelstart=20           " disable fold on start
 set foldmethod=syntax
 autocmd FileType vim setlocal foldmethod=marker         " auto fold vim config at {{{,}}}
 autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
+autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
 
 set mouse=
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
