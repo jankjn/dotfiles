@@ -131,7 +131,6 @@ set relativenumber number       " nice line number
 set cursorline                  " highlight current line
 set list                        " show unvisible chars
 set listchars+=eol:¬,trail:·    " add newline char
-set suffixesadd+=.rb,.js        " add suffixes for gf
 set foldlevelstart=20           " disable fold on start
 set foldmethod=syntax
 autocmd FileType vim setlocal foldmethod=marker         " auto fold vim config at {{{,}}}
