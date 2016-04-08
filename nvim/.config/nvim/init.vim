@@ -31,18 +31,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
-" not using currently
-" if has('nvim')
-"     Plug 'Shougo/deoplete.nvim'
-"     let g:deoplete#enable_at_startup = 1
-"     Plug 'benekastah/neomake'
-"     autocmd! BufWritePost * Neomake
-" endif
-" Plug 'vim-auto-save'
-" Plug 'scrooloose/nerdtree'
-" Plug 'terryma/vim-multiple-cursors'
-" Plug 'kchmck/vim-coffee-script'
-" Plug 'maksimr/vim-jsbeautify' " require npm install -g js-beautify
 call plug#end()
 "}}}
 
@@ -67,13 +55,6 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 "}}}
 
-"-------vim-auto-save {{{
-"---------------------------------------
-" let g:auto_save = 1
-" let g:auto_save_in_insert_mode = 0
-" let g:auto_save_no_updatetime = 1
-"}}}
-
 "-------emmet-vim {{{
 "---------------------------------------
 let g:user_emmet_install_global = 0
@@ -96,7 +77,7 @@ let g:javascript_conceal_return     = "⇐"
 let g:javascript_conceal_undefined  = "¿"
 " let g:javascript_conceal_NaN        = "ℕ"
 let g:javascript_conceal_prototype  = "#"
-let g:javascript_conceal_static     = "•"
+" let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 set conceallevel=1
 "}}}
@@ -129,7 +110,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 "-------vimrc editing {{{
 "---------------------------------------
-nnoremap ,e :e $MYVIMRC<CR>
+nnoremap <Leader>e :e $MYVIMRC<CR>
 " When vimrc is edited, reload it
 autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
 "}}}
