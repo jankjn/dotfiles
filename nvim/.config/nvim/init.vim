@@ -14,13 +14,14 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
-Plug 'drmingdrmer/xptemplate'
+" Plug 'drmingdrmer/xptemplate'
 Plug 'tomtom/tcomment_vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'   " require the_silver_searcher
 Plug 'Raimondi/delimitMate'
+Plug 'mbbill/undotree'
 " eye candy
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
@@ -53,6 +54,11 @@ let g:xptemplate_vars="author=zach&email=z.ach@outlook.com"
 "-------delimitMate {{{
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
+"}}}
+
+"-------undo tree {{{
+nnoremap <F1> :UndotreeToggle<cr>
+let g:undotree_SetFocusWhenToggle = 1
 "}}}
 
 "-------emmet-vim {{{
