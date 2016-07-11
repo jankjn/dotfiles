@@ -21,19 +21,22 @@ Plug 'danro/rename.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'   " require the_silver_searcher
 Plug 'Raimondi/delimitMate'
-Plug 'mbbill/undotree'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'embear/vim-localvimrc'
 " eye candy
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
 " development specific
 Plug 'othree/html5.vim'
-Plug 'mattn/emmet-vim'
-Plug 'pangloss/vim-javascript'
-Plug 'elzr/vim-json'
-Plug 'vim-ruby/vim-ruby'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html'] }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
+Plug 'neomake/neomake'
 call plug#end()
 "}}}
+
 
 "-------ctrlp.vim {{{
 "---------------------------------------
@@ -48,7 +51,7 @@ let g:ctrlp_custom_ignore = {
 
 "-------xptemplate {{{
 "---------------------------------------
-let g:xptemplate_vars="author=zach&email=z.ach@outlook.com"
+let g:xptemplate_vars="author=Jankin&email=jankin.z@outlook.com"
 "}}}
 
 "-------delimitMate {{{
@@ -64,7 +67,7 @@ let g:undotree_SetFocusWhenToggle = 1
 "-------emmet-vim {{{
 "---------------------------------------
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,eruby,php EmmetInstall
+autocmd FileType html,css,eruby EmmetInstall
 "}}}
 
 "-------status line {{{
@@ -81,9 +84,9 @@ let g:javascript_conceal_null       = "ø"
 let g:javascript_conceal_this       = "@"
 let g:javascript_conceal_return     = "⇐"
 let g:javascript_conceal_undefined  = "¿"
-" let g:javascript_conceal_NaN        = "ℕ"
+let g:javascript_conceal_NaN        = "ℕ"
 let g:javascript_conceal_prototype  = "#"
-" let g:javascript_conceal_static     = "•"
+let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 set conceallevel=1
 "}}}
@@ -146,3 +149,7 @@ autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
 set mouse=
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "}}}
+
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_standard_maker = {'exe': './node_modules/.bin/eslint'}
