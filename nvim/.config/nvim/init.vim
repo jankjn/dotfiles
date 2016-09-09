@@ -34,6 +34,8 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
+Plug 'benjie/neomake-local-eslint.vim', { 'for': ['javascript', 'html'] }
+Plug 'elixir-lang/vim-elixir'
 call plug#end()
 "}}}
 
@@ -70,7 +72,7 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,eruby EmmetInstall
 "}}}
 
-"-------status line {{{
+"-------airline {{{
 "---------------------------------------
 " enable tabline
 let g:airline#extensions#tabline#enabled = 1
@@ -90,6 +92,11 @@ let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 let g:javascript_plugin_jsdoc = 1
 set conceallevel=1
+"}}}
+
+"-------neomake {{{
+"---------------------------------------
+let g:neomake_javascript_enabled_makers = ['eslint']
 "}}}
 
 "-------colorscheme {{{
@@ -148,9 +155,6 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
 autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
 
 set mouse=
+set clipboard=unnamed
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "}}}
-
-
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_javascript_standard_maker = {'exe': './node_modules/.bin/eslint'}
