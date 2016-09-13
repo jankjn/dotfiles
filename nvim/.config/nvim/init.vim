@@ -12,20 +12,19 @@
 call plug#begin('~/.config/nvim/plugged')
 " common
 Plug 'tpope/vim-sensible'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
-" Plug 'drmingdrmer/xptemplate'
 Plug 'tomtom/tcomment_vim'
 Plug 'pbrisbin/vim-mkdir'
-Plug 'danro/rename.vim'
+Plug 'danro/rename.vim', { 'on': 'Rename' }
 Plug 'tpope/vim-fugitive'
 Plug 'rking/ag.vim'   " require the_silver_searcher
 Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'embear/vim-localvimrc'
 " eye candy
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
+Plug 'ryanoasis/vim-devicons' " require nerd patched font
 " development specific
 Plug 'othree/html5.vim'
 Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
