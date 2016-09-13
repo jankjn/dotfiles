@@ -28,7 +28,7 @@ Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
 " development specific
 Plug 'othree/html5.vim'
-Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
+Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -155,6 +155,6 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
 autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
 
 set mouse=
-set clipboard=unnamed
+set clipboard+=unnamedplus
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "}}}
