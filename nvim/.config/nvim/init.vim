@@ -27,13 +27,13 @@ Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons' " require nerd patched font
 " development specific
 Plug 'othree/html5.vim'
-Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby'] }
+Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'neomake/neomake'
-Plug 'benjie/neomake-local-eslint.vim', { 'for': ['javascript', 'html'] }
+" Plug 'benjie/neomake-local-eslint.vim', { 'for': ['javascript', 'html'] }
 Plug 'elixir-lang/vim-elixir'
 call plug#end()
 "}}}
@@ -77,6 +77,10 @@ autocmd FileType html,css,eruby EmmetInstall
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
+
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = ''
 "}}}
 
 "-------vim-javascript {{{
