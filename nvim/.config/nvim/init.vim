@@ -12,13 +12,12 @@
 call plug#begin('~/.config/nvim/plugged')
 " common
 Plug 'tpope/vim-sensible'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim', { 'on': 'Rename' }
-Plug 'tpope/vim-fugitive'
-Plug 'rking/ag.vim'   " require the_silver_searcher
 Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " eye candy
@@ -26,15 +25,16 @@ Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons' " require nerd patched font
 " development specific
-Plug 'othree/html5.vim'
+Plug 'othree/html5.vim', { 'for': ['html', 'eruby', 'vue'] }
 Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
+Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'neomake/neomake'
 " Plug 'benjie/neomake-local-eslint.vim', { 'for': ['javascript', 'html'] }
-Plug 'elixir-lang/vim-elixir'
 call plug#end()
 "}}}
 
