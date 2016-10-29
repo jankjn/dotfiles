@@ -33,7 +33,7 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise', { 'for': 'ruby' }
 Plug 'tpope/vim-rails'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 " Plug 'benjie/neomake-local-eslint.vim', { 'for': ['javascript', 'html'] }
 call plug#end()
 "}}}
@@ -159,5 +159,5 @@ autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
 
 set mouse=
 set clipboard+=unnamedplus
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 "}}}
