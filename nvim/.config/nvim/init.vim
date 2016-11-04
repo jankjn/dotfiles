@@ -11,7 +11,7 @@
 "---------------------------------------
 call plug#begin('~/.config/nvim/plugged')
 " common
-Plug 'tpope/vim-sensible'
+" Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -157,7 +157,8 @@ autocmd FileType vim setlocal foldmethod=marker         " auto fold vim config a
 autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
 autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
 
-set mouse=
-set clipboard+=unnamedplus
-set termguicolors
+set mouse=                      " disable mouse
+set clipboard+=unnamedplus      " use system clipboard
+set termguicolors               " enable true color
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1                     " automatic cursor shape
 "}}}
