@@ -157,6 +157,7 @@ autocmd FileType vim setlocal foldmethod=marker         " auto fold vim config a
 autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
 autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
 
+set inccommand=nosplit          " show command effect on typing(nvim 0.1.7)
 set mouse=                      " disable mouse
 set clipboard+=unnamedplus      " use system clipboard
 set termguicolors               " enable true color
