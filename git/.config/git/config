@@ -1,12 +1,30 @@
 [user]
-	name = zzz
-	email = jankin.z@outlook.com
-[gui]
-	encoding = utf-8
+  name = zzz
+  email = jankin.z@outlook.com
 [core]
-	autocrlf = false
-	safecrlf = true
+  autocrlf = false
+  safecrlf = true
+  pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 [push]
-	default = simple
+  default = simple
+[diff]
+  compactionHeuristic = true
+[color "diff"]
+  meta = yellow bold
+  commit = green bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
+[color "branch"]
+  current = yellow reverse
+  local = green
+[color "status"]
+  untracked = yellow
