@@ -26,7 +26,7 @@ Plug 'morhetz/gruvbox'
 Plug 'ryanoasis/vim-devicons' " require nerd patched font
 " development specific
 Plug 'othree/html5.vim', { 'for': ['html', 'eruby', 'vue'] }
-Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue'] }
+Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue', 'scss'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
@@ -154,6 +154,7 @@ set listchars+=eol:¬,trail:·    " add newline char
 set foldlevelstart=20           " disable fold on start
 set foldmethod=syntax
 autocmd FileType vim setlocal foldmethod=marker         " auto fold vim config at {{{,}}}
+autocmd FileType scss EmmetInstall                      " fix for emmet in sass
 autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
 autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
 
