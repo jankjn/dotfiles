@@ -23,7 +23,7 @@ Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 " eye candy
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
-Plug 'ryanoasis/vim-devicons' " require nerd patched font
+" Plug 'ryanoasis/vim-devicons' " require nerd patched font
 " development specific
 Plug 'othree/html5.vim', { 'for': ['html', 'eruby', 'vue'] }
 Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue', 'scss'] }
@@ -114,9 +114,12 @@ nnoremap <tab> :bn<CR>
 nnoremap <s-tab> :bp<CR>
 "}}}
 
-"-------sudo save {{{
+"-------ex mode alias {{{
 "---------------------------------------
+" sudo save
 cnoremap w!! w !sudo tee > /dev/null %
+" current directory
+cnoremap %% <C-R>=expand('%:h').'/'<CR>
 "}}}
 
 "-------encoding && line ending {{{
