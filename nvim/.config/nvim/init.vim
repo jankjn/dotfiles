@@ -1,43 +1,51 @@
+"" vim: set foldlevel=20 foldmethod=marker:
 """"""""""""""""""""""""""""""""""""""""
-" *nix:
-" curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"
-" neovim:
-" curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"
+" NEOVIM config
 """"""""""""""""""""""""""""""""""""""""
 
 "-------vim-plug {{{
+" curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "---------------------------------------
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 " common
-" Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim', { 'on': 'Rename' }
 Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
+Plug 'w0rp/ale'
+Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
+Plug 'drmingdrmer/xptemplate'
+Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
 " eye candy
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
-" Plug 'ryanoasis/vim-devicons' " require nerd patched font
-" development specific
-Plug 'othree/html5.vim', { 'for': ['html', 'eruby', 'vue'] }
-Plug 'jankjn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue', 'scss'] }
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html'] }
+" dev specific
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'othree/html5.vim', { 'for': ['html', 'eruby', 'vue'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue', 'scss'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html', 'vue'] }
+Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-Plug 'tpope/vim-endwise', { 'for': 'ruby' }
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-" Plug 'neomake/neomake'
-" Plug 'benjie/neomake-local-eslint.vim', { 'for': ['javascript', 'html'] }
+Plug 'nginx.vim'
+Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 call plug#end()
 "}}}
 
+"-------clear autocmds {{{
+"---------------------------------------
+augroup vimrc
+  autocmd!
+augroup END
+"}}}
 
 "-------ctrlp.vim {{{
 "---------------------------------------
@@ -68,7 +76,20 @@ let g:undotree_SetFocusWhenToggle = 1
 "-------emmet-vim {{{
 "---------------------------------------
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,eruby EmmetInstall
+au vimrc FileType html,eruby,vue EmmetInstall
+au vimrc FileType css,scss EmmetInstall
+"}}}
+
+"-------ale {{{
+"---------------------------------------
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = 'Δ'
+let g:ale_echo_msg_format = '|%linter%| %s'
+let g:ale_linter_aliases = { 'vue': 'javascript' }
+let g:ale_javascript_eslint_options = '--ext js,vue'
+hi link ALEErrorSign GruvboxRedSign
+hi link ALEWarningSign GruvboxYellowSign
 "}}}
 
 "-------airline {{{
@@ -77,10 +98,6 @@ autocmd FileType html,css,eruby EmmetInstall
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
-
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['md'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['vue'] = ''
 "}}}
 
 "-------vim-javascript {{{
@@ -95,11 +112,6 @@ let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 let g:javascript_plugin_jsdoc = 1
 set conceallevel=1
-"}}}
-
-"-------neomake {{{
-"---------------------------------------
-let g:neomake_javascript_enabled_makers = ['eslint']
 "}}}
 
 "-------colorscheme {{{
@@ -135,14 +147,14 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "---------------------------------------
 nnoremap <Leader>e :e $MYVIMRC<CR>
 " When vimrc is edited, reload it
-autocmd! BufWritePost $MYVIMRC source $MYVIMRC | AirlineRefresh
+au vimrc BufWritePost $MYVIMRC source <afile> | AirlineRefresh
 "}}}
 
 "-------tab config {{{
 "---------------------------------------
 set expandtab
 set ts=2 sw=2 sts=2
-autocmd FileType c setlocal ts=4 sw=4 sts=4
+au vimrc FileType c setlocal ts=4 sw=4 sts=4
 "}}}
 
 "-------general {{{
@@ -154,12 +166,9 @@ set relativenumber number       " nice line number
 set cursorline                  " highlight current line
 set list                        " show unvisible chars
 set listchars+=eol:¬,trail:·    " add newline char
-set foldlevelstart=20           " disable fold on start
-set foldmethod=syntax
-autocmd FileType vim setlocal foldmethod=marker         " auto fold vim config at {{{,}}}
-autocmd FileType scss EmmetInstall                      " fix for emmet in sass
-autocmd BufNewFile,BufRead *.md set filetype=markdown   " take *.md as markdown
-autocmd BufNewFile,BufRead *.vue set filetype=html      " take *.vue as html
+au vimrc BufNewFile,BufRead *.md set filetype=markdown " take *.md as markdown
+" autocmd BufNewFile,BufRead *.vue set filetype=html   " take *.vue as html
+au vimrc BufNewFile,BufRead *.css set filetype=scss    " take *.css as scss (for postcss)
 
 set inccommand=nosplit          " show command effect on typing(nvim 0.1.7)
 set mouse=                      " disable mouse
