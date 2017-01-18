@@ -161,11 +161,11 @@ au vimrc FileType c setlocal ts=4 sw=4 sts=4
 "---------------------------------------
 syntax on
 set nohlsearch
-set hidden                      " switch with buffer unsaved
-set relativenumber number       " nice line number
-set cursorline                  " highlight current line
-set list                        " show unvisible chars
-set listchars+=eol:¬,trail:·    " add newline char
+set hidden                          " switch with buffer unsaved
+set relativenumber number           " nice line number
+set cursorline                      " highlight current line
+set list                            " show unvisible chars
+set listchars=eol:¬,tab:▸\ ,trail:· " add newline char
 au vimrc BufNewFile,BufRead *.md set filetype=markdown " take *.md as markdown
 " autocmd BufNewFile,BufRead *.vue set filetype=html   " take *.vue as html
 au vimrc BufNewFile,BufRead *.css set filetype=scss    " take *.css as scss (for postcss)
