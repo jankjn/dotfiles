@@ -18,6 +18,8 @@ Plug 'danro/rename.vim', { 'on': 'Rename' }
 Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 Plug 'drmingdrmer/xptemplate'
@@ -30,13 +32,14 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'othree/html5.vim', { 'for': ['html', 'eruby', 'vue'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue', 'scss'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html', 'vue'] }
-Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'nginx.vim'
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 call plug#end()
 "}}}
 
@@ -53,7 +56,7 @@ augroup END
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
 
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/](bower_components|node_modules|target|dist|build|vendor)|(\.(swp|ico|git|svn))$',
+            \ 'dir':  '\v[\/](bower_components|node_modules|target|dist|vendor)|(\.(swp|ico|git|svn))$',
             \ 'file': '\v\.(log|jpg|png|jpeg)$',
             \ }
 "}}}
@@ -88,6 +91,10 @@ let g:ale_sign_warning = 'Δ'
 let g:ale_echo_msg_format = '|%linter%| %s'
 let g:ale_linter_aliases = { 'vue': 'javascript' }
 let g:ale_javascript_eslint_options = '--ext js,vue'
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'html': ['eslint'],
+\}
 hi link ALEErrorSign GruvboxRedSign
 hi link ALEWarningSign GruvboxYellowSign
 "}}}
@@ -104,7 +111,7 @@ let g:airline_powerline_fonts=1
 let g:javascript_conceal_function   = "ƒ"
 let g:javascript_conceal_null       = "ø"
 let g:javascript_conceal_this       = "@"
-let g:javascript_conceal_return     = "⇐"
+" let g:javascript_conceal_return     = "⇒" "⇒ ⇐ ↪ ➯ ➾
 let g:javascript_conceal_undefined  = "¿"
 let g:javascript_conceal_NaN        = "ℕ"
 let g:javascript_conceal_prototype  = "#"
@@ -157,6 +164,16 @@ set ts=2 sw=2 sts=2
 au vimrc FileType c setlocal ts=4 sw=4 sts=4
 "}}}
 
+"-------terminal escape {{{
+"---------------------------------------
+tnoremap <Esc> <C-\><C-n>
+"}}}
+
+"-------python omnicomplete {{{
+"---------------------------------------
+au vimrc FileType python set omnifunc=python3complete#Complete
+"}}}
+
 "-------general {{{
 "---------------------------------------
 syntax on
@@ -167,7 +184,7 @@ set cursorline                      " highlight current line
 set list                            " show unvisible chars
 set listchars=eol:¬,tab:▸\ ,trail:· " add newline char
 au vimrc BufNewFile,BufRead *.md set filetype=markdown " take *.md as markdown
-" autocmd BufNewFile,BufRead *.vue set filetype=html   " take *.vue as html
+au vimrc BufNewFile,BufRead *.vue set filetype=html   " take *.vue as html
 au vimrc BufNewFile,BufRead *.css set filetype=scss    " take *.css as scss (for postcss)
 
 set inccommand=nosplit          " show command effect on typing(nvim 0.1.7)
