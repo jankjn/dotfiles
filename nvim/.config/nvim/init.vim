@@ -11,19 +11,17 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tomtom/tcomment_vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim', { 'on': 'Rename' }
 Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 Plug 'drmingdrmer/xptemplate'
-Plug 'rizzatti/dash.vim', { 'on': 'Dash' }
+Plug 'diepm/vim-rest-console', { 'for': 'rest' }
 " eye candy
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
@@ -191,5 +189,4 @@ set inccommand=nosplit          " show command effect on typing(nvim 0.1.7)
 set mouse=                      " disable mouse
 set clipboard+=unnamedplus      " use system clipboard
 set termguicolors               " enable true color
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1                     " automatic cursor shape
 "}}}
