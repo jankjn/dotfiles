@@ -18,6 +18,8 @@ Plug 'danro/rename.vim', { 'on': 'Rename' }
 Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 Plug 'drmingdrmer/xptemplate'
@@ -35,8 +37,9 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
-Plug 'nginx.vim'
+Plug 'vim-scripts/nginx.vim'
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 call plug#end()
 "}}}
