@@ -37,6 +37,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'vim-scripts/nginx.vim'
 Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -90,12 +91,6 @@ let g:ale_sign_column_always = 1
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = 'Δ'
 let g:ale_echo_msg_format = '|%linter%| %s'
-let g:ale_linter_aliases = { 'vue': 'javascript' }
-let g:ale_javascript_eslint_options = '--ext js,vue'
-let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'html': ['eslint'],
-\}
 hi link ALEErrorSign GruvboxRedSign
 hi link ALEWarningSign GruvboxYellowSign
 "}}}
@@ -185,7 +180,6 @@ set cursorline                      " highlight current line
 set list                            " show unvisible chars
 set listchars=eol:¬,tab:▸\ ,trail:· " add newline char
 au vimrc BufNewFile,BufRead *.md set filetype=markdown " take *.md as markdown
-au vimrc BufNewFile,BufRead *.vue set filetype=html   " take *.vue as html
 au vimrc BufNewFile,BufRead *.css set filetype=scss    " take *.css as scss (for postcss)
 
 set inccommand=nosplit          " show command effect on typing(nvim 0.1.7)
