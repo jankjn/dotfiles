@@ -11,7 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
+Plug 'tomtom/tcomment_vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim', { 'on': 'Rename' }
@@ -35,6 +35,9 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html', 'vue'] }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fireplace'
+Plug 'guns/vim-sexp'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
@@ -119,7 +122,7 @@ set conceallevel=1
 
 "-------colorscheme {{{
 "---------------------------------------
-colorscheme gruvbox
+silent! colorscheme gruvbox
 set background=dark
 "}}}
 
