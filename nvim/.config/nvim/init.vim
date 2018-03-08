@@ -8,9 +8,11 @@
 "---------------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
 " common
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pbrisbin/vim-mkdir'
@@ -19,7 +21,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 Plug 'drmingdrmer/xptemplate'
@@ -29,6 +30,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 " dev specific
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'tpope/vim-jdaddy'
 Plug 'othree/html5.vim', { 'for': ['html', 'eruby', 'vue'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue', 'scss'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html', 'vue'] }
@@ -37,14 +39,17 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fireplace'
 Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
-Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'vim-scripts/nginx.vim'
-Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
+
+" Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
+" Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
+" Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+" Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
 call plug#end()
 "}}}
 
@@ -68,7 +73,7 @@ let g:ctrlp_custom_ignore = {
 
 "-------xptemplate {{{
 "---------------------------------------
-let g:xptemplate_vars="author=Jankin&email=jankin.z@outlook.com"
+let g:xptemplate_vars="author=jankjn&email=jankin.z@outlook.com"
 "}}}
 
 "-------delimitMate {{{
@@ -101,9 +106,11 @@ hi link ALEWarningSign GruvboxYellowSign
 "-------airline {{{
 "---------------------------------------
 " enable tabline
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='gruvbox'
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
 "}}}
 
 "-------vim-javascript {{{
@@ -118,6 +125,14 @@ let g:javascript_conceal_static     = "•"
 let g:javascript_conceal_super      = "Ω"
 let g:javascript_plugin_jsdoc = 1
 set conceallevel=1
+"}}}
+
+"-------rainbow_parentheses {{{
+"---------------------------------------
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
 "}}}
 
 "-------colorscheme {{{
@@ -182,8 +197,6 @@ set relativenumber number           " nice line number
 set cursorline                      " highlight current line
 set list                            " show unvisible chars
 set listchars=eol:¬,tab:▸\ ,trail:· " add newline char
-au vimrc BufNewFile,BufRead *.md set filetype=markdown " take *.md as markdown
-au vimrc BufNewFile,BufRead *.css set filetype=scss    " take *.css as scss (for postcss)
 
 set inccommand=nosplit          " show command effect on typing(nvim 0.1.7)
 set mouse=                      " disable mouse
