@@ -14,13 +14,13 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim', { 'on': 'Rename' }
 Plug 'Raimondi/delimitMate'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
 Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 Plug 'drmingdrmer/xptemplate'
@@ -60,15 +60,9 @@ augroup vimrc
 augroup END
 "}}}
 
-"-------ctrlp.vim {{{
+"-------fzf.vim {{{
 "---------------------------------------
-" let g:ctrlp_by_filename = 1
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,tags
-
-let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\v[\/](bower_components|node_modules|target|dist|vendor)|(\.(swp|ico|git|svn))$',
-            \ 'file': '\v\.(log|jpg|png|jpeg)$',
-            \ }
+nnoremap <c-p> :FZF<cr>
 "}}}
 
 "-------xptemplate {{{
