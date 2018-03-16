@@ -16,12 +16,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim', { 'on': 'Rename' }
-Plug 'Raimondi/delimitMate'
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
-Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
 Plug 'w0rp/ale'
+Plug 'Raimondi/delimitMate'
+Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
+Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
 Plug 'metakirby5/codi.vim', { 'on': 'Codi' }
 Plug 'drmingdrmer/xptemplate'
 Plug 'diepm/vim-rest-console', { 'for': 'rest' }
@@ -30,14 +30,13 @@ Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
 " dev specific
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'tpope/vim-jdaddy'
 Plug 'othree/html5.vim', { 'for': ['html', 'eruby', 'vue'] }
 Plug 'mattn/emmet-vim', { 'for': ['html', 'css', 'eruby', 'vue', 'scss'] }
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'html', 'vue'] }
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fireplace'
+Plug 'eraserhd/parinfer-rust'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -46,6 +45,7 @@ Plug 'vim-scripts/nginx.vim'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'solarnz/thrift.vim', { 'for': 'thrift' }
 
+" Plug 'tpope/vim-rails'
 " Plug 'elixir-lang/vim-elixir', { 'for': 'elixir' }
 " Plug 'slashmili/alchemist.vim', { 'for': 'elixir' }
 " Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
@@ -73,6 +73,7 @@ let g:xptemplate_vars="author=jankjn&email=jankin.z@outlook.com"
 "-------delimitMate {{{
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
+au FileType clojure let b:delimitMate_autoclose = 0
 "}}}
 
 "-------undo tree {{{
