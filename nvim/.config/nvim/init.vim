@@ -18,7 +18,7 @@ Plug 'pbrisbin/vim-mkdir'
 Plug 'danro/rename.vim', { 'on': 'Rename' }
 Plug 'w0rp/ale'
 Plug 'Raimondi/delimitMate'
-Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+Plug '/opt/homebrew/opt/fzf/' | Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/vim-easy-align', { 'on': 'EasyAlign' }
