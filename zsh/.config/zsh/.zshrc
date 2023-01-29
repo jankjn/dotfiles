@@ -61,3 +61,16 @@ source ${ZDATADIR:-$HOME/.local/share/zsh}/alias.sh
 
 # completion
 source ${ZDATADIR:-$HOME/.local/share/zsh}/completion.sh
+
+# history
+export HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"  # The path to the history file.
+export HISTSIZE=10000                   # The maximum number of events to save in the internal history.
+export SAVEHIST=10000                   # The maximum number of events to save in the history file.
+# hist options
+setopt HIST_IGNORE_ALL_DUPS  # do not put duplicated command into history list
+setopt HIST_SAVE_NO_DUPS  # do not save duplicated command
+setopt HIST_REDUCE_BLANKS  # remove unnecessary blanks
+setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately after execution
+setopt EXTENDED_HISTORY  # record command start time
+# Lists the ten most used commands.
+alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"

@@ -1,4 +1,4 @@
 nvim/.config/nvim/autoload/
 nvim/.config/nvim/plugged/
+zsh/.local/share/zsh/plugins
 .zcompdump
-.zsh_history
