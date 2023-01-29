@@ -40,6 +40,7 @@ plugins=(
   MichaelAquilina/zsh-you-should-use
   hlissner/zsh-autopair
   zsh-users/zsh-autosuggestions
+  zsh-users/zsh-completions
   zdharma-continuum/fast-syntax-highlighting
 )
 plugin-load $plugins
