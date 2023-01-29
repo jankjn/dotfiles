@@ -34,13 +34,13 @@ plugins=(
   wintermi/zsh-lsd
   zap-zsh/fzf
   reegnz/jq-zsh-plugin
+  zsh-users/zsh-completions
 
   # load these at hypersonic load speeds with zsh-defer
   romkatv/zsh-defer
   MichaelAquilina/zsh-you-should-use
   hlissner/zsh-autopair
   zsh-users/zsh-autosuggestions
-  zsh-users/zsh-completions
   zdharma-continuum/fast-syntax-highlighting
 )
 plugin-load $plugins
@@ -58,3 +58,6 @@ bindkey "^j" jq-complete
 
 # aliases
 source ${ZDATADIR:-$HOME/.local/share/zsh}/alias.sh
+
+# completion
+source ${ZDATADIR:-$HOME/.local/share/zsh}/completion.sh
