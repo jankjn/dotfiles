@@ -3,6 +3,7 @@
 #
 
 # Execute code that does not affect the current session in the background.
+echo "login"
 {
   # Compile the completion dump to increase startup speed.
   zcompdump="${XDG_CACHE_HOME:-$HOME/.cache}/prezto/zcompdump"

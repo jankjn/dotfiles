@@ -9,7 +9,7 @@ set -o emacs
 # declare a simple plugin-load function
 function plugin-load {
   local repo plugdir initfile
-  ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.local/share/zsh}/plugins}
+  ZPLUGINDIR=${ZPLUGINDIR:-${ZDATADIR:-$HOME/.local/share/zsh}/plugins}
   for repo in $@; do
     plugdir=$ZPLUGINDIR/${repo:t}
     initfile=$plugdir/${repo:t}.plugin.zsh
@@ -57,4 +57,4 @@ fi
 bindkey "^j" jq-complete
 
 # aliases
-source ${ZDOTDIR:-$HOME/.local/share/zsh}/alias.sh
+source ${ZDATADIR:-$HOME/.local/share/zsh}/alias.sh
