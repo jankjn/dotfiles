@@ -33,7 +33,6 @@ plugins=(
   wintermi/zsh-brew
   wintermi/zsh-lsd
   zap-zsh/fzf
-  reegnz/jq-zsh-plugin
   zsh-users/zsh-completions
 
   # load these at hypersonic load speeds with zsh-defer
@@ -52,9 +51,6 @@ fi
 
 # init starship
 (( $+commands[starship] )) && eval "$(starship init zsh)"
-
-# jq-zsh-plugin key binding
-bindkey "^j" jq-complete
 
 # aliases
 source ${ZDATADIR:-$HOME/.local/share/zsh}/alias.sh
