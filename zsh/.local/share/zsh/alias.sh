@@ -29,5 +29,5 @@ source $(dirname $0)/git-alias.sh
 # Commands
 (( $+commands[hub] )) && alias git=hub
 (( $+commands[bat] )) && alias cat=bat
-(( $+commands[kitty] )) && alias ssh="kitty +kitten ssh"
+(( $+commands[kitty] )) && alias kssh="kitty +kitten ssh"
 (( $+commands[kubectl] )) && alias k=kubectl
