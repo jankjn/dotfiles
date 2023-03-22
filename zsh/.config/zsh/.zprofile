@@ -17,8 +17,8 @@ fi
 # Editors
 #
 
-export EDITOR='lvim'
-export VISUAL='lvim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 export PAGER='less'
 # Treat these characters as part of a word.
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
