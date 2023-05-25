@@ -44,6 +44,11 @@ plugins=(
 )
 plugin-load $plugins
 
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+bindkey '^x^e' edit-command-line
+
 # source chruby
 if [[ -s "${HOMEBREW_REPOSITORY:-/opt/homebrew}/opt/chruby/share/chruby/chruby.sh" ]]; then
   source "${HOMEBREW_REPOSITORY:-/opt/homebrew}/opt/chruby/share/chruby/chruby.sh"
