@@ -9,4 +9,10 @@ return {
     "goolord/alpha-nvim",
     enabled = false,
   },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = function(_, opts)
+      opts.indent = {}
+    end,
+  },
 }
