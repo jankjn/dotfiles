@@ -41,6 +41,7 @@ plugins=(
   hlissner/zsh-autopair
   zsh-users/zsh-autosuggestions
   zdharma-continuum/fast-syntax-highlighting
+  mgryszko/jvm
 )
 plugin-load $plugins
 
@@ -52,6 +53,11 @@ bindkey '^x^e' edit-command-line
 # source chruby
 if [[ -s "${HOMEBREW_REPOSITORY:-/opt/homebrew}/opt/chruby/share/chruby/chruby.sh" ]]; then
   source "${HOMEBREW_REPOSITORY:-/opt/homebrew}/opt/chruby/share/chruby/chruby.sh"
+  chruby ruby
+fi
+ 
+if [[ -s "$HOME/.cargo/env" ]]; then
+  source "$HOME/.cargo/env"
 fi
 
 # init starship

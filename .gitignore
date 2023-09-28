@@ -1,6 +1,7 @@
 nvim/.config/nvim/autoload/
 nvim/.config/nvim/plugged/
 zsh/.local/share/zsh/plugins
+ruby/.bundle/cache
 .zcompdump
 .zcompcache
 .zsh_history
