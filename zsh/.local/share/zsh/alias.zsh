@@ -14,9 +14,9 @@ alias cp="${aliases[cp]:-cp} -i"
 alias ln="${aliases[ln]:-ln} -i"
 
 # File Download
-if (( $+commands[curl] )); then
+if (($+commands[curl])); then
   alias get='curl --continue-at - --location --progress-bar --remote-name --remote-time'
-elif (( $+commands[wget] )); then
+elif (($+commands[wget])); then
   alias get='wget --continue --progress=bar --timestamping'
 fi
 
@@ -24,11 +24,11 @@ fi
 alias df='df -kh'
 alias du='du -kh'
 
-source $(dirname $0)/git-alias.sh
+source $(dirname $0)/git-alias.zsh
 
 # Commands
-(( $+commands[hub] )) && alias git=hub
-(( $+commands[bat] )) && alias cat=bat
-(( $+commands[kitty] )) && alias kssh="kitty +kitten ssh"
-(( $+commands[kubectl] )) && alias k=kubectl
-(( $+commands[ruby] )) && alias rb=ruby
+(($+commands[hub])) && alias git=hub
+(($+commands[bat])) && alias cat=bat
+(($+commands[kitty])) && alias kssh="kitty +kitten ssh"
+(($+commands[kubectl])) && alias k=kubectl
+(($+commands[ruby])) && alias rb=ruby

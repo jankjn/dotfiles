@@ -64,10 +64,10 @@ fi
 (( $+commands[starship] )) && eval "$(starship init zsh)"
 
 # aliases
-source ${ZDATADIR:-$HOME/.local/share/zsh}/alias.sh
+source ${ZDATADIR:-$HOME/.local/share/zsh}/alias.zsh
 
 # completion
-source ${ZDATADIR:-$HOME/.local/share/zsh}/completion.sh
+source ${ZDATADIR:-$HOME/.local/share/zsh}/completion.zsh
 
 # history
 export HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"  # The path to the history file.

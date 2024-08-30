@@ -4,7 +4,7 @@
 [core]
   autocrlf = false
   safecrlf = true
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta
 [alias]
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 [push]
@@ -28,3 +28,11 @@
   local = green
 [color "status"]
   untracked = yellow
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default

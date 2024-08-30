@@ -11,4 +11,5 @@ return {
       opts.indent = {}
     end,
   },
+  { "danilamihailov/beacon.nvim" },
 }
