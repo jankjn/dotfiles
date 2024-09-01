@@ -50,19 +50,6 @@ zle -N edit-command-line
 bindkey '^xe' edit-command-line
 bindkey '^x^e' edit-command-line
 
-# source chruby
-if [[ -s "${HOMEBREW_REPOSITORY:-/opt/homebrew}/opt/chruby/share/chruby/chruby.sh" ]]; then
-  source "${HOMEBREW_REPOSITORY:-/opt/homebrew}/opt/chruby/share/chruby/chruby.sh"
-  chruby ruby
-fi
- 
-if [[ -s "$HOME/.cargo/env" ]]; then
-  source "$HOME/.cargo/env"
-fi
-
-# init starship
-(( $+commands[starship] )) && eval "$(starship init zsh)"
-
 # aliases
 source ${ZDATADIR:-$HOME/.local/share/zsh}/alias.zsh
 
@@ -81,3 +68,17 @@ setopt INC_APPEND_HISTORY_TIME  # append command to history file immediately aft
 setopt EXTENDED_HISTORY  # record command start time
 # Lists the ten most used commands.
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
+
+# init starship
+(( $+commands[starship] )) && eval "$(starship init zsh)"
+
+# source chruby
+if [[ -s "${HOMEBREW_REPOSITORY:-/opt/homebrew}/opt/chruby/share/chruby/chruby.sh" ]]; then
+  source "${HOMEBREW_REPOSITORY:-/opt/homebrew}/opt/chruby/share/chruby/chruby.sh"
+  chruby ruby
+fi
+ 
+# source cargo
+if [[ -s "$HOME/.cargo/env" ]]; then
+  source "$HOME/.cargo/env"
+fi
