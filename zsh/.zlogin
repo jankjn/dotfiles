@@ -14,8 +14,12 @@
 # Execute code only if STDERR is bound to a TTY.
 if [[ -o INTERACTIVE && -t 2 ]]; then
 
+
+  # Print system info
+  if (( $+commands[fastfetch] )); then
+    fastfetch -l small -s Title:Separator:OS:Host:Kernel:Uptime:Shell:DE:WM:CPU:Battery:PowerAdapter
   # Print a random, hopefully interesting, adage.
-  if (( $+commands[fortune] )); then
+  elif (( $+commands[fortune] )); then
     fortune -s
     print
   fi

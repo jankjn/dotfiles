@@ -57,7 +57,7 @@ source ${ZDATADIR:-$HOME/.local/share/zsh}/alias.zsh
 source ${ZDATADIR:-$HOME/.local/share/zsh}/completion.zsh
 
 # history
-export HISTFILE="$XDG_CACHE_HOME/zsh/.zhistory"  # The path to the history file.
+export HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/.zhistory"  # The path to the history file.
 export HISTSIZE=10000                   # The maximum number of events to save in the internal history.
 export SAVEHIST=10000                   # The maximum number of events to save in the history file.
 # hist options
